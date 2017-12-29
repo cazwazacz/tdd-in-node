@@ -7,7 +7,7 @@ after(function(done) {
   server.close(done);
 });
 
-describe('modulo', function() {
+describe('modulo route', function() {
   it('should accept numbers', function(done) {
       supertest(app)
       .get('/modulo?a=9&b=4')
