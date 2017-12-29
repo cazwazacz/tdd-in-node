@@ -2,6 +2,11 @@ var supertest = require('supertest');
 var assert = require('assert');
 var app = require('../../index');
 
+after(function(done) {
+  var server = app.listen(3000);
+  server.close(done);
+});
+
 describe('modulo', function() {
   it('should accept numbers', function(done) {
       supertest(app)
