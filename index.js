@@ -1,8 +1,9 @@
 var express = require('express');
 var app = express();
+var modulo = require('./lib/modulo');
 
 app.get('/modulo', function(req, res) {
-  res.send(200);
+  res.json({ result: modulo(req.query.a, req.query.b) });
 })
 
 app.listen(3000, function() {
